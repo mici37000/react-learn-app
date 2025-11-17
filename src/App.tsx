@@ -2,6 +2,7 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import './App.scss'
+import Content from './components/Content'
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
     <>
       <Header />
       <Navbar />
-      <main>Main content</main>
+      <Content />
       <Footer />
     </>
   )
