@@ -1,0 +1,9 @@
+import './Home.scss';
+
+function Home() {
+    return (
+        <>This is the home page</>
+    );
+}
+
+export default Home;
