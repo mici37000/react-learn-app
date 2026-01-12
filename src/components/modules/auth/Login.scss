@@ -1,0 +1,9 @@
+form {
+  > div {
+    margin-block-end: 15px;
+
+    > button {
+      margin-inline-end: 10px;
+    }
+  }
+}

@@ -146,10 +146,6 @@ $transition: 0.3s ease;
   color: $text-light;
   background-color: $border-color;
 
-  &:hover {
-    background-color: darken($border-color, 5%);
-  }
-
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(226, 232, 240, 0.5);
