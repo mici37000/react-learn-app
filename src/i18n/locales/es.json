@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "appTitle": "Aplicación React",
+    "home": "Inicio",
+    "products": "Productos",
+    "addProduct": "Añadir Producto",
+    "login": "Iniciar Sesión"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "appTitle": "React Learn App",
+    "home": "Home",
+    "products": "Products",
+    "addProduct": "Add Product",
+    "login": "Login"
+  }
+}
