@@ -1,10 +1,8 @@
 import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
 import { useState } from "react";
 import { orderBy } from "@progress/kendo-data-query";
-import {
-  filterBy,
-} from "@progress/kendo-data-query";
-import "./ProductList.scss";
+import { filterBy } from "@progress/kendo-data-query";
+import styles from "./ProductList.module.scss";
 
 interface ProductData {
   ProductID: number;
@@ -193,7 +191,7 @@ const ProductList = () => {
   }
 
   return (
-    <div className="product-list-container">
+    <div className={styles.productListContainer}>
       <h1>Product List</h1>
       <Grid
         data={processedData}

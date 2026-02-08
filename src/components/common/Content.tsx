@@ -4,11 +4,11 @@ import Login from "../modules/auth/Login";
 import EditProduct from "../modules/products/EditProduct";
 import Product from "../modules/products/Product";
 import ProductList from "../modules/products/ProductList";
-import "./Content.scss";
+import styles from "./Content.module.scss";
 
 function Content() {
   return (
-    <main className="content">
+    <main className={styles.content}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

@@ -1,5 +1,5 @@
 import useForm from "../../../hooks/useForm";
-import "./Login.scss";
+import styles from "./Login.module.scss";
 
 interface LoginForm {
   email: string;
@@ -22,7 +22,7 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.loginForm}>
       <div>
         <input
           type="email"

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Product } from "./interfaces";
 import { categories, manufacturers } from "./constants";
-import "./EditProduct.scss";
+import styles from "./EditProduct.module.scss";
 
 function EditProduct() {
   const [formData, setFormData] = useState<Product>({
@@ -13,7 +13,7 @@ function EditProduct() {
     price: 0,
   });
   const [submittedProduct, setSubmittedProduct] = useState<Product | null>(
-    null
+    null,
   );
 
   const handleChange = (e) => {
@@ -73,11 +73,11 @@ function EditProduct() {
       <h1 className="text-3xl font-bold text-gray-800 mb-6">
         Create New Product
       </h1>
-      <form onSubmit={handleSubmit} className="product-form">
+      <form onSubmit={handleSubmit} className={styles.productForm}>
         {/* Category Select */}
-        <div className="form-group">
-          <label htmlFor="category" className="form-label">
-            Category <span className="required">*</span>
+        <div className={styles.formGroup}>
+          <label htmlFor="category" className={styles.formLabel}>
+            Category <span className={styles.required}>*</span>
           </label>
           <select
             id="category"
@@ -85,7 +85,7 @@ function EditProduct() {
             value={formData.category}
             onChange={handleChange}
             required
-            className="form-select"
+            className={styles.formSelect}
           >
             {categories.map((cat) => (
               <option key={cat.value} value={cat.value}>
@@ -96,9 +96,9 @@ function EditProduct() {
         </div>
 
         {/* Manufacturer Select */}
-        <div className="form-group">
-          <label htmlFor="manufacturer" className="form-label">
-            Manufacturer <span className="required">*</span>
+        <div className={styles.formGroup}>
+          <label htmlFor="manufacturer" className={styles.formLabel}>
+            Manufacturer <span className={styles.required}>*</span>
           </label>
           <select
             id="manufacturer"
@@ -106,7 +106,7 @@ function EditProduct() {
             value={formData.manufacturer}
             onChange={handleChange}
             required
-            className="form-select"
+            className={styles.formSelect}
           >
             {manufacturers.map((mfr) => (
               <option key={mfr.value} value={mfr.value}>
@@ -117,9 +117,9 @@ function EditProduct() {
         </div>
 
         {/* Name Input */}
-        <div className="form-group">
-          <label htmlFor="name" className="form-label">
-            Product Name <span className="required">*</span>
+        <div className={styles.formGroup}>
+          <label htmlFor="name" className={styles.formLabel}>
+            Product Name <span className={styles.required}>*</span>
           </label>
           <input
             type="text"
@@ -129,13 +129,13 @@ function EditProduct() {
             onChange={handleChange}
             required
             placeholder="Enter product name"
-            className="form-input"
+            className={styles.formInput}
           />
         </div>
 
         {/* Description Textarea */}
-        <div className="form-group">
-          <label htmlFor="description" className="form-label">
+        <div className={styles.formGroup}>
+          <label htmlFor="description" className={styles.formLabel}>
             Description
           </label>
           <textarea
@@ -144,14 +144,14 @@ function EditProduct() {
             value={formData.description}
             onChange={handleChange}
             placeholder="Enter product description (optional)"
-            className="form-textarea"
+            className={styles.formTextarea}
           />
         </div>
 
         {/* Price Input */}
-        <div className="form-group">
-          <label htmlFor="price" className="form-label">
-            Price <span className="required">*</span>
+        <div className={styles.formGroup}>
+          <label htmlFor="price" className={styles.formLabel}>
+            Price <span className={styles.required}>*</span>
           </label>
           <input
             type="number"
@@ -163,16 +163,20 @@ function EditProduct() {
             min="0"
             step="0.01"
             placeholder="0.00"
-            className="form-input"
+            className={styles.formInput}
           />
         </div>
 
         {/* Buttons */}
-        <div className="button-group">
-          <button type="submit" className="btn btn-submit">
+        <div className={styles.buttonGroup}>
+          <button type="submit" className={`${styles.btn} ${styles.btnSubmit}`}>
             Create Product
           </button>
-          <button type="button" onClick={handleReset} className="btn btn-reset">
+          <button
+            type="button"
+            onClick={handleReset}
+            className={`${styles.btn} ${styles.btnReset}`}
+          >
             Reset
           </button>
         </div>

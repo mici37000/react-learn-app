@@ -4,7 +4,7 @@ import {
   AppBarSpacer,
 } from "@progress/kendo-react-layout";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./Navbar.scss";
+import styles from "./Navbar.module.scss";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -22,21 +22,21 @@ function Navbar() {
   };
 
   return (
-    <AppBar className="navbar">
+    <AppBar className={styles.navbar}>
       <AppBarSection>
-        <div className="navbar-brand" onClick={() => navigate("/")}>
-          <h1 className="navbar-title">React Learn App</h1>
+        <div className={styles.navbarBrand} onClick={() => navigate("/")}>
+          <h1 className={styles.navbarTitle}>React Learn App</h1>
         </div>
       </AppBarSection>
 
       <AppBarSpacer />
 
       <AppBarSection>
-        <ul className="navbar-menu">
+        <ul className={styles.navbarMenu}>
           {navItems.map((item) => (
             <li
               key={item.path}
-              className={`navbar-item ${isActive(item.path) ? "active" : ""}`}
+              className={`${styles.navbarItem} ${isActive(item.path) ? styles.active : ""}`}
               onClick={() => navigate(item.path)}
             >
               {item.label}

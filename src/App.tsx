@@ -1,11 +1,9 @@
-import Header from './components/common/Header'
-import Navbar from './components/common/Navbar'
-import Footer from './components/common/Footer'
-import './App.scss'
-import Content from './components/common/Content'
+import Header from "./components/common/Header";
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
+import Content from "./components/common/Content";
 
 function App() {
-
   return (
     <>
       <Header />
@@ -13,7 +11,7 @@ function App() {
       <Content />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
