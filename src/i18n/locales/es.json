@@ -5,5 +5,43 @@
     "products": "Productos",
     "addProduct": "Añadir Producto",
     "login": "Iniciar Sesión"
+  },
+  "product": {
+    "id": "ID del Producto"
+  },
+  "editProduct": {
+    "create": "Crear Nuevo Producto",
+    "category": "Categoría",
+    "manufacturer": "Fabricante",
+    "productName": "Nombre del Producto",
+    "description": "Descripción",
+    "price": "Precio",
+    "save": "Crear Producto",
+    "reset": "Restablecer",
+    "successTitle": "✓ ¡Producto Creado Exitosamente!",
+    "validationError": "Por favor complete todos los campos obligatorios",
+    "namePlaceholder": "Ingrese el nombre del producto",
+    "descriptionPlaceholder": "Ingrese la descripción del producto (opcional)",
+    "na": "N/D"
+  },
+  "categories": {
+    "select": "Seleccione una categoría",
+    "electronics": "Electrónica",
+    "clothing": "Ropa",
+    "food": "Alimentos y Bebidas",
+    "books": "Libros",
+    "home": "Hogar y Jardín"
+  },
+  "manufacturers": {
+    "select": "Seleccione un fabricante"
+  },
+  "productList": {
+    "title": "Lista de Productos",
+    "columnId": "ID",
+    "columnProductName": "Nombre del Producto",
+    "columnCategory": "Categoría",
+    "columnUnitPrice": "Precio Unitario",
+    "columnUnitsInStock": "Unidades en Stock",
+    "columnDiscontinued": "Descontinuado"
   }
 }

@@ -1,14 +1,14 @@
 export const categories = [
-  { value: "", label: "Select a category" },
-  { value: "electronics", label: "Electronics" },
-  { value: "clothing", label: "Clothing" },
-  { value: "food", label: "Food & Beverages" },
-  { value: "books", label: "Books" },
-  { value: "home", label: "Home & Garden" },
+  { value: "", label: "categories.select" },
+  { value: "electronics", label: "categories.electronics" },
+  { value: "clothing", label: "categories.clothing" },
+  { value: "food", label: "categories.food" },
+  { value: "books", label: "categories.books" },
+  { value: "home", label: "categories.home" },
 ];
 
 export const manufacturers = [
-  { value: "", label: "Select a manufacturer" },
+  { value: "", label: "manufacturers.select" },
   { value: "acme", label: "ACME Corp" },
   { value: "globex", label: "Globex Corporation" },
   { value: "initech", label: "Initech" },

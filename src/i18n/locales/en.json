@@ -5,5 +5,43 @@
     "products": "Products",
     "addProduct": "Add Product",
     "login": "Login"
+  },
+  "product": {
+    "id": "Product ID"
+  },
+  "editProduct": {
+    "create": "Create New Product",
+    "category": "Category",
+    "manufacturer": "Manufacturer",
+    "productName": "Product Name",
+    "description": "Description",
+    "price": "Price",
+    "save": "Create Product",
+    "reset": "Reset",
+    "successTitle": "✓ Product Created Successfully!",
+    "validationError": "Please fill in all required fields",
+    "namePlaceholder": "Enter product name",
+    "descriptionPlaceholder": "Enter product description (optional)",
+    "na": "N/A"
+  },
+  "categories": {
+    "select": "Select a category",
+    "electronics": "Electronics",
+    "clothing": "Clothing",
+    "food": "Food & Beverages",
+    "books": "Books",
+    "home": "Home & Garden"
+  },
+  "manufacturers": {
+    "select": "Select a manufacturer"
+  },
+  "productList": {
+    "title": "Product List",
+    "columnId": "ID",
+    "columnProductName": "Product Name",
+    "columnCategory": "Category",
+    "columnUnitPrice": "Unit Price",
+    "columnUnitsInStock": "Units In Stock",
+    "columnDiscontinued": "Discontinued"
   }
 }

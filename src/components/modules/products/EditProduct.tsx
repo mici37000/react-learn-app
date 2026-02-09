@@ -1,9 +1,12 @@
 import { useState } from "react";
 import type { Product } from "./interfaces";
 import { categories, manufacturers } from "./constants";
+import { useTranslation } from "react-i18next";
 import styles from "./EditProduct.module.scss";
 
 function EditProduct() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState<Product>({
     id: "",
     category: "",
@@ -34,7 +37,7 @@ function EditProduct() {
       !formData.name ||
       !formData.price
     ) {
-      alert("Please fill in all required fields");
+      alert(t("editProduct.validationError"));
       return;
     }
 
@@ -71,13 +74,14 @@ function EditProduct() {
   return (
     <>
       <h1 className="text-3xl font-bold text-gray-800 mb-6">
-        Create New Product
+        {t("editProduct.create")}
       </h1>
       <form onSubmit={handleSubmit} className={styles.productForm}>
         {/* Category Select */}
         <div className={styles.formGroup}>
           <label htmlFor="category" className={styles.formLabel}>
-            Category <span className={styles.required}>*</span>
+            {t("editProduct.category")}{" "}
+            <span className={styles.required}>*</span>
           </label>
           <select
             id="category"
@@ -89,7 +93,7 @@ function EditProduct() {
           >
             {categories.map((cat) => (
               <option key={cat.value} value={cat.value}>
-                {cat.label}
+                {t(cat.label)}
               </option>
             ))}
           </select>
@@ -98,7 +102,8 @@ function EditProduct() {
         {/* Manufacturer Select */}
         <div className={styles.formGroup}>
           <label htmlFor="manufacturer" className={styles.formLabel}>
-            Manufacturer <span className={styles.required}>*</span>
+            {t("editProduct.manufacturer")}{" "}
+            <span className={styles.required}>*</span>
           </label>
           <select
             id="manufacturer"
@@ -110,7 +115,7 @@ function EditProduct() {
           >
             {manufacturers.map((mfr) => (
               <option key={mfr.value} value={mfr.value}>
-                {mfr.label}
+                {t(mfr.label)}
               </option>
             ))}
           </select>
@@ -119,7 +124,8 @@ function EditProduct() {
         {/* Name Input */}
         <div className={styles.formGroup}>
           <label htmlFor="name" className={styles.formLabel}>
-            Product Name <span className={styles.required}>*</span>
+            {t("editProduct.productName")}{" "}
+            <span className={styles.required}>*</span>
           </label>
           <input
             type="text"
@@ -128,7 +134,7 @@ function EditProduct() {
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder="Enter product name"
+            placeholder={t("editProduct.namePlaceholder")}
             className={styles.formInput}
           />
         </div>
@@ -136,14 +142,14 @@ function EditProduct() {
         {/* Description Textarea */}
         <div className={styles.formGroup}>
           <label htmlFor="description" className={styles.formLabel}>
-            Description
+            {t("editProduct.description")}
           </label>
           <textarea
             id="description"
             name="description"
             value={formData.description}
             onChange={handleChange}
-            placeholder="Enter product description (optional)"
+            placeholder={t("editProduct.descriptionPlaceholder")}
             className={styles.formTextarea}
           />
         </div>
@@ -151,7 +157,7 @@ function EditProduct() {
         {/* Price Input */}
         <div className={styles.formGroup}>
           <label htmlFor="price" className={styles.formLabel}>
-            Price <span className={styles.required}>*</span>
+            {t("editProduct.price")} <span className={styles.required}>*</span>
           </label>
           <input
             type="number"
@@ -170,38 +176,42 @@ function EditProduct() {
         {/* Buttons */}
         <div className={styles.buttonGroup}>
           <button type="submit" className={`${styles.btn} ${styles.btnSubmit}`}>
-            Create Product
+            {t("editProduct.save")}
           </button>
           <button
             type="button"
             onClick={handleReset}
             className={`${styles.btn} ${styles.btnReset}`}
           >
-            Reset
+            {t("editProduct.reset")}
           </button>
         </div>
       </form>
       {submittedProduct && (
         <div className="mt-6 bg-green-50 border border-green-200 rounded-lg p-6">
           <h2 className="text-xl font-bold text-green-800 mb-4">
-            ✓ Product Created Successfully!
+            {t("editProduct.successTitle")}
           </h2>
           <div className="space-y-2 text-gray-700">
             <p>
-              <strong>Category:</strong> {submittedProduct.category}
+              <strong>{t("editProduct.category")}:</strong>{" "}
+              {submittedProduct.category}
             </p>
             <p>
-              <strong>Manufacturer:</strong> {submittedProduct.manufacturer}
+              <strong>{t("editProduct.manufacturer")}:</strong>{" "}
+              {submittedProduct.manufacturer}
             </p>
             <p>
-              <strong>Name:</strong> {submittedProduct.name}
+              <strong>{t("editProduct.productName")}:</strong>{" "}
+              {submittedProduct.name}
             </p>
             <p>
-              <strong>Description:</strong>{" "}
-              {submittedProduct.description || "N/A"}
+              <strong>{t("editProduct.description")}:</strong>{" "}
+              {submittedProduct.description || t("editProduct.na")}
             </p>
             <p>
-              <strong>Price:</strong> ${submittedProduct.price}
+              <strong>{t("editProduct.price")}:</strong> $
+              {submittedProduct.price}
             </p>
           </div>
         </div>
