@@ -3,6 +3,7 @@ import Home from '../modules/Home';
 import EditProduct from '../modules/products/EditProduct';
 import Product from '../modules/products/Product';
 import "./Content.scss";
+import Form from '../modules/form/form';
 
 function Content() {
   return (
@@ -12,6 +13,7 @@ function Content() {
           <Route path="/" element={<Home />} />
           <Route path="/edit-product" element={<EditProduct />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="form" element={<Form />} />
         </Routes>
       </BrowserRouter>
     </main>

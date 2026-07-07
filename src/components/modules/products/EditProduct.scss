@@ -146,9 +146,9 @@ $transition: 0.3s ease;
   color: $text-light;
   background-color: $border-color;
 
-  &:hover {
-    background-color: darken($border-color, 5%);
-  }
+  // &:hover {
+  //   background-color: darken($border-color, 5%);
+  // }
 
   &:focus {
     outline: none;
